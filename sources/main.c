@@ -8,6 +8,13 @@
 ** Last update Mon Apr 25 07:48:43 2016 Maxime Pillon
 */
 
+#include	"../../includes/n4s.h"
+
 int 		main(void)
 {
+  t_status	state;
+
+  if (play_game(&state) == -1)
+    return (-1);
+  return (0);
 }
