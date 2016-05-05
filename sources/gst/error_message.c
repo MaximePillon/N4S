@@ -8,6 +8,8 @@
 ** Last update Tue Apr 26 07:45:50 2016 Maxime Pillon
 */
 
+#include	"../../includes/n4s.h"
+
 int		error_message(char *str)
 {
   write (1, str, my_strlen(str));

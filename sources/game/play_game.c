@@ -14,4 +14,6 @@ int		play_game(t_status *state)
 {
   if (analyse(START_SIMULATION, start_simulation(), state) == -1)
     return (error_message("launch of simulation failed"));
+  if (launch_race(state) == -1)
+    return (-1);
 }

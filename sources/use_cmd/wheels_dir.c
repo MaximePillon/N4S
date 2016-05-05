@@ -9,6 +9,7 @@
 */
 
 #include	<unistd.h>
+#include	"../../includes/n4s.h"
 
 int		wheels_dir(float value)
 {
