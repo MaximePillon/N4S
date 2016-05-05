@@ -11,8 +11,16 @@
 #ifndef 		CPE_2015_N4S_DEFINE_H
 # define 		CPE_2015_N4S_DEFINE_H
 
-#include		"n4s.h"
+# include		"n4s.h"
+# include		"get_next_line.h"
 
+float			my_get_float(const char *);
+int			my_getnbr(const char *);
+int			my_strcmp(char *, char *);
+char			*my_strncat(char *, char *, int);
+int			my_strlen(const char *);
+char			*my_strdup(const char *);
+char			**my_str_to_wordtab(char *, int *, char *);
 int			acceleration(t_status *);
 int			analyse(int, int, t_status *);
 int			check_and_analyse_error(int);
@@ -31,8 +39,5 @@ int			get_lidar(void);
 int			start_simulation(void);
 int			stop_simulation(void);
 int			wheels_dir(float);
-
-
-
 
 #endif 			/* !CPE_2015_N4S_DEFINE_H */

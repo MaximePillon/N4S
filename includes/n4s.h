@@ -123,8 +123,8 @@
 #  define               CMD_NOT_FOUND			(18)
 # endif                 /* !CMD_NOT_FOUND */
 
-# ifndef                SIMU_UP&RUNNING
-#  define               SIMU_UP&RUNNING			(19)
+# ifndef                SIMU_UP_RUNNING
+#  define               SIMU_UP_RUNNING			(19)
 # endif                 /* !SIMU_UP&RUNNING */
 
 /*

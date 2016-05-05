@@ -8,7 +8,7 @@
 ** Last update Tue Apr 26 16:23:03 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		need_to_turn(t_status *state)
 {

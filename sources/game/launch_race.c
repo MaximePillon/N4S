@@ -8,7 +8,7 @@
 ** Last update Tue Apr 26 15:42:28 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		get_all_state(t_status *state)
 {

@@ -9,7 +9,7 @@
 */
 
 #include	<unistd.h>
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		start_simulation(void)
 {

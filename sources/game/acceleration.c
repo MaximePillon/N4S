@@ -8,7 +8,7 @@
 ** Last update Thu Apr 28 08:43:32 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		acceleration(t_status *state)
 {

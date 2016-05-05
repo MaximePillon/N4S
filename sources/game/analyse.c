@@ -8,7 +8,9 @@
 ** Last update Tue Apr 26 07:46:51 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	<stddef.h>
+#include	<stdlib.h>
+#include	"../../includes/define.h"
 
 static int	analyse_state_1(int cmd, t_status *state)
 {
@@ -16,6 +18,7 @@ static int	analyse_state_1(int cmd, t_status *state)
   char		**data;
   int		nb;
 
+  (void)cmd;
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
@@ -40,6 +43,7 @@ static int	analyse_state_2(int cmd, t_status *state)
   char		**data;
   int		nb;
 
+  (void)cmd;
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
@@ -76,7 +80,7 @@ static int	stock_last_data(int cmd, t_status *state, char **data)
   return (0);
 }
 
-static int	analyse_state_2(int cmd, t_status *state)
+static int	analyse_state_3(int cmd, t_status *state)
 {
   char		*line;
   char		**data;
@@ -108,4 +112,5 @@ int		analyse(int cmd, int response, t_status *state)
     return (analyse_state_2(cmd, state));
   if (response == 3)
     return (analyse_state_3(cmd, state));
+  return (0);
 }

@@ -8,7 +8,7 @@
 ** Last update Thu Apr 28 08:40:58 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		keep_direction(t_status *state)
 {

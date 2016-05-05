@@ -20,6 +20,14 @@ CFLAGS		+=	-g -ggdb3
 NAME		=	ia
 
 SRCS		=	sources/main.c \
+			sources/gst/my_str_to_wordtab.c \
+			sources/gst/my_strcmp.c \
+			sources/gst/my_strdup.c \
+			sources/gst/my_strncat.c \
+			sources/gst/my_strlen.c \
+			sources/gst/my_getnbr.c \
+			sources/gst/my_get_float.c \
+			sources/gst/get_next_line.c \
 			sources/game/acceleration.c \
 			sources/game/analyse.c \
 			sources/game/check_and_analyse_error.c \

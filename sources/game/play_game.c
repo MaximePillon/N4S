@@ -8,7 +8,7 @@
 ** Last update Tue Apr 26 07:43:16 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		play_game(t_status *state)
 {

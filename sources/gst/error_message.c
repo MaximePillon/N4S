@@ -8,7 +8,8 @@
 ** Last update Tue Apr 26 07:45:50 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	<unistd.h>
+#include	"../../includes/define.h"
 
 int		error_message(char *str)
 {

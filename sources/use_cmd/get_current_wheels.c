@@ -9,7 +9,7 @@
 */
 
 #include	<unistd.h>
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 int		get_current_wheels(void)
 {

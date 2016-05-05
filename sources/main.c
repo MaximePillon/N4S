@@ -8,7 +8,7 @@
 ** Last update Mon Apr 25 07:48:43 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../includes/define.h"
 
 int 		main(void)
 {

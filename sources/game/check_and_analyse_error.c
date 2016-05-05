@@ -8,7 +8,7 @@
 ** Last update Tue Apr 26 08:49:31 2016 Maxime Pillon
 */
 
-#include	"../../includes/n4s.h"
+#include	"../../includes/define.h"
 
 static int 	check_and_analyse_error_next(int nb)
 {
