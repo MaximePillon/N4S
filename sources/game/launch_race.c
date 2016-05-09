@@ -32,7 +32,7 @@ int		launch_race(t_status *state)
       if (need_to_turn(state) == -1)
 	return (-1);
     }
-    else if (state->wheels != 0)
+    else if (state->wheels_state != 0)
     {
       if (keep_direction(state) == -1)
 	return (-1);
@@ -43,4 +43,5 @@ int		launch_race(t_status *state)
 	return (-1);
     }
   }
+  return (0);
 }

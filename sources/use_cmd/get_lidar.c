@@ -14,5 +14,5 @@
 int		get_lidar(void)
 {
   write (1, "get_lidar\n", 10);
-  return (2)
+  return (2);
 }

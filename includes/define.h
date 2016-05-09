@@ -14,6 +14,8 @@
 # include		"n4s.h"
 # include		"get_next_line.h"
 
+void			putnbr(int nb);
+void			put_float(float nb);
 float			my_get_float(const char *);
 int			my_getnbr(const char *);
 int			my_strcmp(char *, char *);

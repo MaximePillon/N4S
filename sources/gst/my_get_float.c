@@ -10,14 +10,14 @@
 
 #include	"../../includes/n4s.h"
 
-float		float_extend(float nb, char *str, int cpt1, float dec)
+float		float_extend(float nb, int cpt1, float dec)
 {
   int		cpt;
 
   cpt = 1;
   while (--cpt1 != 0)
     cpt *= 10;
-  dec =/ cpt;
+  dec = dec / cpt;
   nb += dec;
   return (nb);
 }
@@ -46,5 +46,5 @@ float		my_get_float(const char *str)
       nb = (nb * 10) + (str[cpt] - 48);
   if (!str[cpt])
     return (-1);
-  return (float_extend(nb, str, cpt1, dec));
+  return (float_extend(nb, cpt1, dec));
 }
