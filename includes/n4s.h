@@ -150,7 +150,7 @@ typedef enum	e_error
 
 typedef struct s_status
 {
-  float		lidar_state;
+  float		*lidar_state;
   float		speed_state;
   float		wheels_state;
   char		*add_info;

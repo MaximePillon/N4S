@@ -27,7 +27,7 @@ int		launch_race(t_status *state)
   {
     if (get_all_state(state) == -1)
       return (-1);
-    if (state->lidar_state < 1000)
+    if (turn(state) == 0)
     {
       if (need_to_turn(state) == -1)
 	return (-1);

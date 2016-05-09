@@ -56,11 +56,10 @@ static int	analyse_state_2(int cmd, t_status *state)
     return (-1);
   if (my_strcmp("OK", data[1]) != 0)
     return (error_message("the command failed"));
-  if ((state->lidar_state = my_get_float(data[3])) == -1)
+  if (stock_lidar_data(data, state) == -1)
     return (-1);
-  state->lidar_state *= 32;
-  if (my_strcmp("No further info", data[4]) != 0)
-    state->add_info = my_strdup(data[4]);
+  if (my_strcmp("No further info", data[35]) != 0)
+    state->add_info = my_strdup(data[35]);
   free(line);
   return (0);
 }

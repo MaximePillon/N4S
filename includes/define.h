@@ -14,6 +14,8 @@
 # include		"n4s.h"
 # include		"get_next_line.h"
 
+int			turn(t_status *state);
+int			stock_lidar_data(char **data, t_status *state);
 void			putnbr(int nb);
 void			put_float(float nb);
 float			my_get_float(const char *);

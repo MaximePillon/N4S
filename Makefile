@@ -32,6 +32,8 @@ SRCS		=	sources/main.c \
 			sources/game/acceleration.c \
 			sources/gst/put_float.c \
 			sources/game/analyse.c \
+			sources/game/turn.c \
+			sources/game/stock_lidar_data.c \
 			sources/game/check_and_analyse_error.c \
 			sources/game/keep_direction.c \
 			sources/game/launch_race.c \
