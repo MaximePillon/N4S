@@ -21,9 +21,6 @@ int		prepare(t_status *state)
   return (0);
 }
 
-#include	<stdio.h>
-#include	<unistd.h>
-
 int		play_game(t_status *state)
 {
   if (prepare(state) == -1)
