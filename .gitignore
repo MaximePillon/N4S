@@ -57,9 +57,15 @@ fabric.properties
 *.o
 *~
 \#*\#
-#*.txt
-#test/*
+*.txt
+test/*
 
 ## Binary
 a.out
-lem_in
+ia
+
+## N4S FILES
+scene/*
+pipes.sh
+n4s
+n4s_buffer
