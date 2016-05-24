@@ -64,7 +64,7 @@ test/*
 a.out
 ia
 
-## N4S FILES
+## N4S files
 scene/*
 pipes.sh
 n4s
