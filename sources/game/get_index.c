@@ -34,7 +34,7 @@ static int	get_index_moyenne(float moyenne, t_status *state)
     if (tmp < close)
     {
       close = tmp;
-      index = state->lidar_state[cpt];
+      index = cpt;
     }
   }
   return (index);
