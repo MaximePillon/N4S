@@ -15,8 +15,14 @@ int		prepare(t_status *state)
 {
   if ((state->lidar_state = malloc(sizeof(float) * 32)) == NULL)
     return (-1);
+  if ((state->add_info = malloc(sizeof(char) * 1)) == NULL)
+    return (-1);
+  state->add_info[0] = '\0';
   return (0);
 }
+
+#include	<stdio.h>
+#include	<unistd.h>
 
 int		play_game(t_status *state)
 {

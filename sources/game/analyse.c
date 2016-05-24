@@ -12,6 +12,9 @@
 #include	<stdlib.h>
 #include	"../../includes/define.h"
 
+#include	<stdio.h>
+#include	<unistd.h>
+
 static int	analyse_state_1(int cmd, t_status *state)
 {
   char		*line;
@@ -21,10 +24,22 @@ static int	analyse_state_1(int cmd, t_status *state)
   (void)cmd;
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
+  //write(2, line, my_strlen(line));
+  //write(2, "\n", my_strlen(line));
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
-    return (error_message("format type failed"));
-  if (nb != 4)
-    return (error_message("format type failed"));
+    return (error_message("tab format type failed"));
+  /*
+  write(2, data[0], my_strlen(data[0]));
+  write(2, "\n", 1);
+  write(2, data[1], my_strlen(data[1]));
+  write(2, "\n", 1);
+  write(2, data[2], my_strlen(data[2]));
+  write(2, "\n", 1);
+  write(2, data[3], my_strlen(data[3]));
+  write(2, "\n", 1);
+  */
+  if (nb != 4 && nb != 3)
+    return (error_message("nb arg format type failed"));
   if ((nb = my_getnbr(data[0])) == -1)
     return (error_message("value id is incorrect"));
   else if (check_and_analyse_error(nb) == -1)
@@ -46,10 +61,13 @@ static int	analyse_state_2(int cmd, t_status *state)
   (void)cmd;
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
+//  write(2, line, my_strlen(line));
+//  write(2, "\n", my_strlen(line));
+  fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
-    return (error_message("format type failed"));
-  if (nb != 5)
-    return (error_message("format type failed"));
+    return (error_message("tab format type failed"));
+  if (nb != 35 && nb != 36)
+    return (error_message("nb arg format type failed"));
   if ((nb = my_getnbr(data[0])) == -1)
     return (error_message("value id is incorrect"));
   else if (check_and_analyse_error(nb) == -1)
@@ -85,8 +103,11 @@ static int	analyse_state_3(int cmd, t_status *state)
   char		**data;
   int		nb;
 
+
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
+  //write(2, line, my_strlen(line));
+  //write(2, "\n", my_strlen(line));
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("format type failed"));
   if (nb != 5)
@@ -105,6 +126,7 @@ static int	analyse_state_3(int cmd, t_status *state)
 
 int		analyse(int cmd, int response, t_status *state)
 {
+  fprintf(stderr, "%d %d \n", cmd, response);
   if (response == 1)
     return (analyse_state_1(cmd, state));
   if (response == 2)

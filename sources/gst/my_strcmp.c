@@ -17,7 +17,7 @@ int		my_strcmp(char *str1, char *str2)
   cpt = 0;
   while (str1[cpt] && str2[cpt] && str1[cpt] == str2[cpt])
     ++cpt;
-  if (!str1[cpt] || !str2[cpt])
-    return (-1);
-  return (0);
+  if (!str1[cpt] && !str2[cpt])
+    return (0);
+  return (-1);
 }

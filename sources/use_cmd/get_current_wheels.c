@@ -13,7 +13,7 @@
 
 int		get_current_wheels(void)
 {
-  write (1, "get_current_wheels\n", 19);
+  write (1, "GET_CURRENT_WHEELS\n", 19);
   return (3);
 }
 

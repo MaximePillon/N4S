@@ -10,6 +10,9 @@
 
 #include	"../../includes/define.h"
 
+
+#include	<unistd.h>
+
 int		get_all_state(t_status *state)
 {
   if (analyse(GET_LIDAR, get_lidar(), state) == -1)
@@ -21,13 +24,21 @@ int		get_all_state(t_status *state)
   return (0);
 }
 
+void		print_state(t_status *state)
+{
+#include	<stdio.h>
+  fprintf(stderr, "add_info : %s \n speed : %f \n wheels : %f \n", state->add_info, state->speed_state, state->wheels_state);
+  fprintf(stderr, "%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f \n", state->lidar_state[0], state->lidar_state[1], state->lidar_state[2], state->lidar_state[3], state->lidar_state[4], state->lidar_state[5], state->lidar_state[6], state->lidar_state[7], state->lidar_state[8], state->lidar_state[9], state->lidar_state[10], state->lidar_state[11], state->lidar_state[12], state->lidar_state[13], state->lidar_state[14], state->lidar_state[15], state->lidar_state[16], state->lidar_state[17], state->lidar_state[18], state->lidar_state[19], state->lidar_state[20], state->lidar_state[21], state->lidar_state[22], state->lidar_state[23], state->lidar_state[24], state->lidar_state[25], state->lidar_state[26], state->lidar_state[27], state->lidar_state[28], state->lidar_state[29], state->lidar_state[30], state->lidar_state[31]);
+}
+
 int		launch_race(t_status *state)
 {
   while (my_strcmp(state->add_info, "Checkpoint d'arrive") != 0)
   {
     if (get_all_state(state) == -1)
       return (-1);
-    if (turn(state) == 0)
+    print_state(state);
+    if (turn(state) == 1)
     {
       if (need_to_turn(state) == -1)
 	return (-1);

@@ -14,12 +14,12 @@ int		turn(t_status *state)
 {
   int		cpt;
 
-  cpt = 0;
-  while (cpt < 32)
+  cpt = 14;
+  while (cpt < 17)
   {
     if (state->lidar_state[cpt] < 1000)
-      return (0);
+      return (1);
     cpt++;
   }
-  return (1);
+  return (0);
 }

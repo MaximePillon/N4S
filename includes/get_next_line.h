@@ -9,7 +9,7 @@
 */
 
 #ifndef		READ_SIZE
-# define	READ_SIZE	(40)
+# define	READ_SIZE	(10000)
 
 char		*my_realloc(char *, int);
 char		*cp_buffer(char *, char *, int, int);

@@ -29,6 +29,7 @@ SRCS		=	sources/main.c \
 			sources/gst/my_getnbr.c \
 			sources/gst/my_get_float.c \
 			sources/gst/get_next_line.c \
+			sources/gst/my_getfloat.c \
 			sources/game/acceleration.c \
 			sources/gst/put_float.c \
 			sources/game/analyse.c \

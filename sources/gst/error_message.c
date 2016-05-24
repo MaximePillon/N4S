@@ -13,7 +13,7 @@
 
 int		error_message(char *str)
 {
-  write (1, str, my_strlen(str));
-  write (1, "\n", 1);
+  write (2, str, my_strlen(str));
+  write (2, "\n", 1);
   return (-1);
 }

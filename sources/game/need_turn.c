@@ -12,10 +12,6 @@
 
 int		need_to_turn(t_status *state)
 {
-  state->wheels_state += 1,25;
-  state->wheels_state *= 100;
-  state->wheels_state = (int)(state->wheels_state) % 200;
-  state->wheels_state /= 100;
   if (analyse(WHEELS_DIR, wheels_dir(state->wheels_state), state) == -1)
     return (error_message("the tentative  to turn failed"));
   return (0);

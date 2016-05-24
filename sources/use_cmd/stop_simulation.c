@@ -13,6 +13,6 @@
 
 int		stop_simulation(void)
 {
-  write (1, "stop_simulation\n", 16);
+  write (1, "STOP_SIMULATION\n", 16);
   return (1);
 }
