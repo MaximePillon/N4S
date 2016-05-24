@@ -51,12 +51,10 @@ int		launch_race(t_status *state)
       ++i;
     }
     fprintf(stderr, "the max is : %d => %f\n", max, state->lidar_state[max]);
-
     fprintf(stderr, "the needed angle is : %d => %f\n", (max * 2) - 30, ((double)((max * 2) - 30)) / 30);
-    car_forward(0.9);
-    wheels_dir((float)((max * 2) - 30) / 30);
-    while (1);
-
+    if (analyse(CAR_FORWARD, car_forward(0.9), state) == -1)
+      return (-1);
+    //wheels_dir((float)((max * 2) - 30) / 30);
     /*
     if (turn(state) == 1)
     {

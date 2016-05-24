@@ -4,14 +4,14 @@
 ** Made by Maxime Pillon
 ** Login   <maxime.pillon@epitech.eu>
 **
-** Started on  Thu May 05 14:04:36 2016 Maxime Pillon
-** Last update Thu May 05 14:04:36 2016 Maxime Pillon
+** Started on  Tue May 24 13:11:39 2016 Maxime Pillon
+** Last update Tue May 24 13:11:39 2016 Maxime Pillon
 */
 
 #include		<unistd.h>
 #include		<stdlib.h>
-#include		"../../includes/get_next_line.h"
-#include 		"../../includes/define.h"
+#include		"get_next_line.h"
+#include		"define.h"
 
 char			*my_realloc(char *str, int size)
 {

@@ -15,29 +15,17 @@
 #include	<stdio.h>
 #include	<unistd.h>
 
-static int	analyse_state_1(int cmd, t_status *state)
+static int	analyse_state_1(t_status *state)
 {
   char		*line;
   char		**data;
   int		nb;
 
-  (void)cmd;
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
-  //write(2, line, my_strlen(line));
-  //write(2, "\n", my_strlen(line));
+  fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("tab format type failed"));
-  /*
-  write(2, data[0], my_strlen(data[0]));
-  write(2, "\n", 1);
-  write(2, data[1], my_strlen(data[1]));
-  write(2, "\n", 1);
-  write(2, data[2], my_strlen(data[2]));
-  write(2, "\n", 1);
-  write(2, data[3], my_strlen(data[3]));
-  write(2, "\n", 1);
-  */
   if (nb != 4 && nb != 3)
     return (error_message("nb arg format type failed"));
   if ((nb = my_getnbr(data[0])) == -1)
@@ -52,17 +40,14 @@ static int	analyse_state_1(int cmd, t_status *state)
   return (0);
 }
 
-static int	analyse_state_2(int cmd, t_status *state)
+static int	analyse_state_2(t_status *state)
 {
   char		*line;
   char		**data;
   int		nb;
 
-  (void)cmd;
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
-//  write(2, line, my_strlen(line));
-//  write(2, "\n", my_strlen(line));
   fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("tab format type failed"));
@@ -86,12 +71,12 @@ static int	stock_last_data(int cmd, t_status *state, char **data)
 {
   if (cmd == GET_CURRENT_SPEED)
   {
-    if ((state->speed_state = my_get_float(data[3])) == -1)
+    if ((state->speed_state = get_float(data[3])) == -1)
       return (-1);
   }
   else if (cmd == GET_CURRENT_WHEELS)
   {
-    if ((state->wheels_state = my_get_float(data[3])) == -1)
+    if ((state->wheels_state = get_float(data[3])) == -1)
       return (-1);
   }
   return (0);
@@ -106,8 +91,7 @@ static int	analyse_state_3(int cmd, t_status *state)
 
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
-  //write(2, line, my_strlen(line));
-  //write(2, "\n", my_strlen(line));
+  fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("format type failed"));
   if (nb != 5)
@@ -128,9 +112,9 @@ int		analyse(int cmd, int response, t_status *state)
 {
   fprintf(stderr, "%d %d \n", cmd, response);
   if (response == 1)
-    return (analyse_state_1(cmd, state));
+    return (analyse_state_1(state));
   if (response == 2)
-    return (analyse_state_2(cmd, state));
+    return (analyse_state_2(state));
   if (response == 3)
     return (analyse_state_3(cmd, state));
   return (0);

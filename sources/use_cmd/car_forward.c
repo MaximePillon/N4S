@@ -11,10 +11,16 @@
 #include	<unistd.h>
 #include	"../../includes/define.h"
 
+#include	<stdio.h>
+
 int		car_forward(float value)
 {
-  write (1, "CAR_FORWARD:", 12);
-  put_float(value);
-  write (1, "\n", 1);
+  printf("CAR_FORWARD:%.1f\n", value);
+  fprintf(stderr, "CAR_FORWARD:%.1f\n", value);
+  /*
+   * write(1, "CAR_FORWARD:", 12);
+   * put_float(value);
+   * write(1, "\n", 1);
+  */
   return (1);
 }

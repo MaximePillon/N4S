@@ -11,17 +11,20 @@
 #include	<unistd.h>
 #include	"../../includes/n4s.h"
 
+#include	<stdio.h>
+
 void		put_float(float nb)
 {
-  char		c;
-
-  while ((int)nb % 10 != 0)
+  /*char		c;*/
+  printf("%f", nb);
+  /*while ((int)nb % 10 != 0)
     nb *= 10;
   nb /= 10;
   while (nb != 0)
   {
     c = (int)nb % 10 + 48;
     nb /= 10;
-    write(1, &c, 1);
+    write(2, &c, 1);
   }
+   */
 }
