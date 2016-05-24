@@ -37,7 +37,7 @@ int		launch_race(t_status *state)
   int		max;
 
   fprintf(stderr, "Race launched\n");
-  while (my_strcmp(state->add_info, "Checkpoint d\'arrive") != 0)
+  while (1)
   {
     if (get_all_state(state) == -1)
       return (-1);
@@ -54,7 +54,8 @@ int		launch_race(t_status *state)
     fprintf(stderr, "the needed angle is : %d => %f\n", (max * 2) - 30, ((double)((max * 2) - 30)) / 30);
     if (analyse(CAR_FORWARD, car_forward(0.9), state) == -1)
       return (-1);
-    //wheels_dir((float)((max * 2) - 30) / 30);
+    if (analyse(WHEELS_DIR, wheels_dir((float)((max * 2) - 30) / 30), state) == -1)
+      return (-1);
     /*
     if (turn(state) == 1)
     {

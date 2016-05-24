@@ -10,21 +10,21 @@
 
 #include	<unistd.h>
 #include	"../../includes/n4s.h"
+#include	"define.h"
 
-#include	<stdio.h>
-
-void		put_float(float nb)
+void		put_float(float nb, int dec)
 {
-  /*char		c;*/
-  printf("%f", nb);
-  /*while ((int)nb % 10 != 0)
-    nb *= 10;
-  nb /= 10;
-  while (nb != 0)
+  int		i;
+  char		c;
+
+  putnbr((int)nb);
+  i = 0;
+  write(1, ".", 1);
+  while (i < dec)
   {
-    c = (int)nb % 10 + 48;
-    nb /= 10;
-    write(2, &c, 1);
+    nb *= 10;
+    c = (int)nb % 10 + '0';
+    write(1, &c, 1);
+    ++i;
   }
-   */
 }

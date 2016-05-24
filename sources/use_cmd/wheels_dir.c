@@ -13,8 +13,8 @@
 
 int		wheels_dir(float value)
 {
-  write (1, "WHEELS_DIR:", 12);
-  put_float(value);
+  write (1, "WHEELS_DIR:", 11);
+  put_float(value, 3);
   write (1, "\n", 1);
   return (1);
 }

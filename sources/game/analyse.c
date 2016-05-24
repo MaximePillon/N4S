@@ -26,7 +26,7 @@ static int	analyse_state_1(t_status *state)
   fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("tab format type failed"));
-  if (nb != 4 && nb != 3)
+  if (nb < 3)
     return (error_message("nb arg format type failed"));
   if ((nb = my_getnbr(data[0])) == -1)
     return (error_message("value id is incorrect"));
@@ -51,7 +51,7 @@ static int	analyse_state_2(t_status *state)
   fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("tab format type failed"));
-  if (nb != 35 && nb != 36)
+  if (nb < 35)
     return (error_message("nb arg format type failed"));
   if ((nb = my_getnbr(data[0])) == -1)
     return (error_message("value id is incorrect"));
@@ -94,7 +94,7 @@ static int	analyse_state_3(int cmd, t_status *state)
   fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("format type failed"));
-  if (nb != 5)
+  if (nb < 5)
     return (error_message("format type failed"));
   if ((nb = my_getnbr(data[0])) == -1)
     return (error_message("value id is incorrect"));

@@ -14,7 +14,7 @@
 int		car_backward(float value)
 {
   write (1, "CAR_BACKWARD ", 13);
-  put_float(value);
+  put_float(value, 1);
   write (1, "\n", 1);
   return (1);
 }

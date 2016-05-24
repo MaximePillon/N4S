@@ -18,7 +18,7 @@ float			get_float(const char *str);
 int			turn(t_status *state);
 int			stock_lidar_data(char **data, t_status *state);
 void			putnbr(int nb);
-void			put_float(float nb);
+void			put_float(float nb, int dec);
 float			my_get_float(const char *);
 int			my_getnbr(const char *);
 int			my_strcmp(char *, char *);

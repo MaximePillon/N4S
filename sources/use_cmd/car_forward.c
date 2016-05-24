@@ -15,12 +15,8 @@
 
 int		car_forward(float value)
 {
-  printf("CAR_FORWARD:%.1f\n", value);
-  fprintf(stderr, "CAR_FORWARD:%.1f\n", value);
-  /*
-   * write(1, "CAR_FORWARD:", 12);
-   * put_float(value);
-   * write(1, "\n", 1);
-  */
+   write(1, "CAR_FORWARD:", 12);
+   put_float(value, 1);
+   write(1, "\n", 1);
   return (1);
 }
