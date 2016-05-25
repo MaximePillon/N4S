@@ -15,9 +15,9 @@ float 		speed_need(t_status *state)
   int		cpt;
   float		max;
 
-  cpt = -1;
+  cpt = 9;
   max = 0;
-  while (++cpt < 32)
+  while (++cpt < 21)
     if (state->lidar_state[cpt] > max)
       max = state->lidar_state[cpt];
   max /= 3200;
