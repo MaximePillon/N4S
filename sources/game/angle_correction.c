@@ -10,18 +10,24 @@
 
 #include	"../../includes/n4s.h"
 
-float 		angle_correction(t_status *state)
+float 		angle_correction(t_status *state, float dir)
 {
-  float		correction;
+  float		tmp[3];
+  int		i;
 
-  if (state->lidar_state[0] < state->lidar_state[31])
-    correction = state->lidar_state[31];
-  else
-    correction = state->lidar_state[0];
-  if (correction > 400)
-    return (0);
-  correction /= 800;
-  if (state->lidar_state[0] < state->lidar_state[31])
-    correction = -correction;
-  return (correction);
+  tmp[0] = 0;
+  tmp[2] = 0;
+  i = 0;
+  while (i < 32)
+  {
+    tmp[i / (32 / 3)] += state->lidar_state[i];
+    ++i;
+  }
+  tmp[0] /= (32 / 3);
+  tmp[2] /= (32 / 3);
+  if (tmp[0] > tmp[2] && dir > (32 / 3) * 2 && tmp[2] < 500)
+    return (-((dir - ((32 / 3) * 2)) / 100));
+  if (tmp[0] < tmp[2] && dir < (32 / 3) && tmp[0] < 500)
+    return (dir / 100);
+  return (0);
 }
