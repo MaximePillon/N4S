@@ -17,6 +17,11 @@ void		put_float(float nb, int dec)
   int		i;
   char		c;
 
+  if (nb < 0)
+  {
+    write(1, "-", 1);
+    nb = -nb;
+  }
   putnbr((int)nb);
   i = 0;
   write(1, ".", 1);

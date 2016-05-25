@@ -71,12 +71,12 @@ static int	stock_last_data(int cmd, t_status *state, char **data)
 {
   if (cmd == GET_CURRENT_SPEED)
   {
-    if ((state->speed_state = get_float(data[3])) == -1)
+    if ((state->speed_state = get_float(data[3])) == -2)
       return (-1);
   }
   else if (cmd == GET_CURRENT_WHEELS)
   {
-    if ((state->wheels_state = get_float(data[3])) == -1)
+    if ((state->wheels_state = get_float(data[3])) == -2)
       return (-1);
   }
   return (0);

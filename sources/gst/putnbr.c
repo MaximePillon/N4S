@@ -14,11 +14,23 @@
 void		putnbr(int nb)
 {
   char		caracter;
+  int		i;
 
+  if (nb < 0)
+  {
+    write(1, "-", 1);
+    nb = -nb;
+  }
+  i = 0;
   while (nb != 0)
   {
     caracter = nb % 10 + 48;
     nb /= 10;
     write (1, &caracter, 1);
+    ++i;
+  }
+  if (i == 0)
+  {
+    write(1, "0", 1);
   }
 }

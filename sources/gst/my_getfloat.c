@@ -50,7 +50,7 @@ float		get_float(const char *str)
   unsigned int	dec;
 
   if (str == NULL)
-    return (-1);
+    return (-2);
   point = false;
   nb = 0;
   dec = 0;

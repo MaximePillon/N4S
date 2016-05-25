@@ -20,7 +20,7 @@ int		stock_lidar_data(char **data, t_status *state)
   cpt = 3;
   while (cpt < 35)
   {
-    if ((state->lidar_state[cpt - 3] = get_float(data[cpt])) == -1)
+    if ((state->lidar_state[cpt - 3] = get_float(data[cpt])) == -2)
       return (-1);
     ++cpt;
   }

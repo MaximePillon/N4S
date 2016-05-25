@@ -55,7 +55,7 @@ float		get_index(t_status *state)
   moyenne /= 32;
   cpt = -1;
   while (++cpt < 32)
-    if (max_value < state->lidar_state[cpt])
+    if (max_value <= state->lidar_state[cpt])
     {
       max_value = state->lidar_state[cpt];
       max_index = cpt;

@@ -14,7 +14,7 @@
 int		wheels_dir(float value)
 {
   write (1, "WHEELS_DIR:", 11);
-  put_float(value, 3);
+  put_float(value, 5);
   write (1, "\n", 1);
   return (1);
 }
