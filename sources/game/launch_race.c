@@ -53,7 +53,7 @@ int		launch_race(t_status *state)
     angle = (float)((((((max + 1.0) / 32.0) * 180.0) - 90.0) / 90.0) * -1.0);
     angle *= 0.4;
     fprintf(stderr, "%f\n", angle);
-    if (analyse(CAR_FORWARD, car_forward(0.4), state) == -1)
+    if (analyse(CAR_FORWARD, car_forward(speed_need(state)), state) == -1)
       return (-1);
     if (analyse(WHEELS_DIR, wheels_dir(angle), state) == -1)
       return (-1);
