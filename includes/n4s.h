@@ -127,27 +127,6 @@
 #  define               SIMU_UP_RUNNING			(19)
 # endif                 /* !SIMU_UP&RUNNING */
 
-/*
-typedef enum	e_error
-{
-  SIMU_N_LAUNCH,
-  ERROR_N_DETAIL,
-  ERROR_CHECKPOINT,
-  SIM_COMPONENT_LOAD_FAILURE,
-  NETWORK_OPERATION_FAILURE,
-  SERVER_SIDE_ERROR,
-  CLIENT_SIDE_ERROR,
-  EMPTY_COMMAND,
-  UNKNOW_COMMAND,
-  WRONG_ARGUMENT,
-  TOO_MANY_ARGS,
-  PIPELINE_FAILURE,
-  UNEXPECTED_ARG_VALUE,
-  CAMERA_INFOGET_FAILURE,
-  CMD_NOT_FOUND,
-}		t_error;
-*/
-
 typedef struct s_status
 {
   float		*lidar_state;
