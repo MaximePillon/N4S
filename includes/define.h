@@ -46,5 +46,6 @@ int			start_simulation(void);
 int			stop_simulation(void);
 int			wheels_dir(float);
 float 			speed_need(t_status *state);
+float 			angle_correction(t_status *state);
 
 #endif 			/* !CPE_2015_N4S_DEFINE_H */

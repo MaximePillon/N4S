@@ -13,7 +13,7 @@
 float 		speed_need(t_status *state)
 {
   int		cpt;
-  int		max;
+  float		max;
 
   cpt = -1;
   max = 0;
