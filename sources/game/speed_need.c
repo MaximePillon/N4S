@@ -12,15 +12,25 @@
 
 float 		speed_need(t_status *state)
 {
-  int		cpt;
-  float		max;
+  float		value;
 
-  cpt = 9;
-  max = 0;
-  while (++cpt < 21)
-    if (state->lidar_state[cpt] > max)
-      max = state->lidar_state[cpt];
-  max /= 3200;
-  state->speed_state = max;
-  return (max);
+  value = state->lidar_state[16];
+  value += state->lidar_state[17];
+  value += state->lidar_state[18];
+  value += state->lidar_state[19];
+  value += state->lidar_state[20];
+  value += state->lidar_state[15];
+  value += state->lidar_state[14];
+  value += state->lidar_state[13];
+  value += state->lidar_state[12];
+  value /= 9;
+  value /= 3010;
+  if (state->wheels_state > 0.1)
+    value *= (1 - state->wheels_state);
+  else if (state->wheels_state < 0.1)
+    value *= (1 + state->wheels_state);
+  value *= 0.8;
+  if (value < 0.2)
+    value = 0.2;
+  return (value);
 }

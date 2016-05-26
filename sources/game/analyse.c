@@ -23,7 +23,7 @@ static int	analyse_state_1(t_status *state)
 
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
-  fprintf(stderr, "%s \n", line);
+  //fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("tab format type failed"));
   if (nb < 3)
@@ -48,7 +48,7 @@ static int	analyse_state_2(t_status *state)
 
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
-  fprintf(stderr, "%s \n", line);
+  //fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("tab format type failed"));
   if (nb < 35)
@@ -91,7 +91,7 @@ static int	analyse_state_3(int cmd, t_status *state)
 
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));
-  fprintf(stderr, "%s \n", line);
+  //fprintf(stderr, "%s \n", line);
   if ((data = my_str_to_wordtab(line, &nb, ":")) == NULL)
     return (error_message("format type failed"));
   if (nb < 5)
@@ -110,7 +110,7 @@ static int	analyse_state_3(int cmd, t_status *state)
 
 int		analyse(int cmd, int response, t_status *state)
 {
-  fprintf(stderr, "%d %d \n", cmd, response);
+  //fprintf(stderr, "%d %d \n", cmd, response);
   if (response == 1)
     return (analyse_state_1(state));
   if (response == 2)

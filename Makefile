@@ -42,6 +42,7 @@ SRCS		=	sources/main.c \
 			sources/game/need_turn.c \
 			sources/game/play_game.c \
 			sources/game/angle_correction.c \
+			sources/game/angle_need.c \
 			sources/gst/error_message.c \
 			sources/use_cmd/car_backward.c \
 			sources/use_cmd/car_forward.c \
