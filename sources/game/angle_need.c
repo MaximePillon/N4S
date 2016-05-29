@@ -5,7 +5,7 @@
 ** Login   <sylvain.corsini@epitech.eu>
 **
 ** Started on  Thu May 26 11:17:29 2016 Sylvain CORSINI
-** Last update Sun May 29 17:44:30 2016 Maxence
+** Last update Sun May 29 21:17:56 2016 Maxence
 */
 
 #include	"../../includes/n4s.h"
@@ -67,22 +67,22 @@ float		angle_need(t_status *state)
 
   if (state->lidar_state[0] > 1100 && state->lidar_state[31] > 1100)
     return (start_turn(state));
-  right = state->lidar_state[31] + state->lidar_state[30] +
-	  state->lidar_state[29];
+  right = state->lidar_state[31] + state->lidar_state[30]
+    + state->lidar_state[29];
   right = (right > (ANGLE_DIST * 3)) ? (ANGLE_DIST) : (right / 3);
   left = state->lidar_state[0] + state->lidar_state[1] + state->lidar_state[2];
   left = (left > (ANGLE_DIST * 3)) ? (ANGLE_DIST) : left / 3;
   if (left < right)
-  {
-    (right + right - left > ANGLE_DIST) ?
-    (right = ANGLE_DIST) : (right += right - left);
-    value = (1 - (ANGLE_MAX - (right - left)) / ANGLE_MAX) * -1;
-  }
+    {
+      (right + right - left > ANGLE_DIST) ?
+	(right = ANGLE_DIST) : (right += right - left);
+      value = (1 - (ANGLE_MAX - (right - left)) / ANGLE_MAX) * -1;
+    }
   else if (left > right)
-  {
-    (left + left - right > ANGLE_DIST) ?
-    (left = ANGLE_DIST) : (left += left - right);
-    value = (1 - (ANGLE_MAX - (left - right)) / ANGLE_MAX);
-  }
+    {
+      (left + left - right > ANGLE_DIST) ?
+	(left = ANGLE_DIST) : (left += left - right);
+      value = (1 - (ANGLE_MAX - (left - right)) / ANGLE_MAX);
+    }
   return (correct_angle(value, state));
 }

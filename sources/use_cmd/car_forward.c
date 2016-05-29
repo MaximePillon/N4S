@@ -5,13 +5,11 @@
 ** Login   <maxime.pillon@epitech.eu>
 **
 ** Started on  Mon Apr 25 15:56:44 2016 Maxime Pillon
-** Last update Mon Apr 25 15:56:44 2016 Maxime Pillon
+** Last update Sun May 29 21:22:41 2016 Maxence
 */
 
 #include	<unistd.h>
 #include	"../../includes/define.h"
-
-#include	<stdio.h>
 
 int		car_forward(float value)
 {

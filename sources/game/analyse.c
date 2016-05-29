@@ -5,7 +5,7 @@
 ** Login   <maxime.pillon@epitech.eu>
 **
 ** Started on  Tue Apr 26 07:46:51 2016 Maxime Pillon
-** Last update Tue Apr 26 07:46:51 2016 Maxime Pillon
+** Last update Sun May 29 21:17:13 2016 Maxence
 */
 
 #include	<stddef.h>
@@ -82,7 +82,6 @@ static int	analyse_state_3(int cmd, t_status *state)
   char		*line;
   char		**data;
   int		nb;
-
 
   if ((line = get_next_line(0)) == NULL)
     return (error_message("get_next_line failed"));

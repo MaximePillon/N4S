@@ -5,7 +5,7 @@
 ** Login   <maxime.pillon@epitech.eu>
 **
 ** Started on  Mon Apr 25 17:47:42 2016 Maxime Pillon
-** Last update Mon Apr 25 17:47:42 2016 Maxime Pillon
+** Last update Sun May 29 21:23:01 2016 Maxence
 */
 
 #include	<unistd.h>
@@ -16,4 +16,3 @@ int		get_current_wheels(void)
   write(1, "GET_CURRENT_WHEELS\n", 19);
   return (3);
 }
-

@@ -5,7 +5,7 @@
 ** Login   <maxime.pillon@epitech.eu>
 **
 ** Started on  Tue Apr 26 08:49:31 2016 Maxime Pillon
-** Last update Tue Apr 26 08:49:31 2016 Maxime Pillon
+** Last update Sun May 29 21:19:19 2016 Maxence
 */
 
 #include	"../../includes/define.h"
@@ -15,7 +15,7 @@ static int 	check_and_analyse_error_next(int nb)
   if (nb == WRONG_ARGUMENT)
     return (error_message("we have an error cause of wrong argument"));
   else if (nb == TOO_MANY_ARGS)
-    return (error_message("we have an error cause a wrong number of argument"));
+    return (error_message("we have an error: wrong number of argument"));
   else if (nb == PIPELINE_FAILURE)
     return (error_message("The pipeline failed"));
   else if (nb == UNEXPECTED_ARG_VALUE)
