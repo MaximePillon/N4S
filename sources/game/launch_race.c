@@ -10,8 +10,6 @@
 
 #include	"../../includes/define.h"
 
-#include	<stdio.h>
-
 int		get_all_state(t_status *state)
 {
   if (analyse(GET_LIDAR, get_lidar(), state) == -1)
@@ -23,23 +21,9 @@ int		get_all_state(t_status *state)
   return (0);
 }
 
-void		print_state(t_status *state)
-{
-  int		i;
-
-  fprintf(stderr, "add_info : %s \n speed : %f \n wheels : %f \n", state->add_info, state->speed_state, state->wheels_state);
-  i = 0;
-  while (i < 32)
-  {
-    fprintf(stderr, "%d:%f\n", i, state->lidar_state[i]);
-    ++i;
-  }
-  fprintf(stderr, "\n");
-}
-
 int		launch_race(t_status *state)
 {
-  while (1)
+  while (my_strcmp(state->add_info, "Track Cleared") != 0)
   {
     if (get_all_state(state) == -1)
       return (-1);
@@ -47,7 +31,6 @@ int		launch_race(t_status *state)
       return (-1);
     if (analyse(WHEELS_DIR, wheels_dir(angle_need(state)), state) == -1)
       return (-1);
-    //print_state(state);
   }
   return (0);
 }

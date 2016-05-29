@@ -8,6 +8,11 @@
 ** Last update Thu May 26 11:17:29 2016 Sylvain CORSINI
 */
 
+
+#include	<stdio.h>
+
+
+
 #include	"../../includes/n4s.h"
 
 #define		ANGLE_DIST	(800)
@@ -19,10 +24,10 @@ float		angle_need(t_status *state)
   float		left;
   float		right;
 
-  right = (state->lidar_state[31] > ANGLE_DIST) ?
-	  (ANGLE_DIST) : (state->lidar_state[31]);
-  left = (state->lidar_state[0] > ANGLE_DIST) ?
-	 (ANGLE_DIST) : (state->lidar_state[0]);
+  right = ((state->lidar_state[31] + state->lidar_state[30] + state->lidar_state[29]) > (ANGLE_DIST * 3)) ?
+	  (ANGLE_DIST) : (state->lidar_state[31] + state->lidar_state[30] + state->lidar_state[29]) / 3;
+  left = ((state->lidar_state[0] + state->lidar_state[1] + state->lidar_state[2]) > (ANGLE_DIST * 3)) ?
+	 (ANGLE_DIST) : (state->lidar_state[0] + state->lidar_state[1] + state->lidar_state[2]) / 3;
   if (left < right)
   {
     (right + right - left > ANGLE_DIST) ?

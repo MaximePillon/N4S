@@ -30,7 +30,7 @@ float 		speed_need(t_status *state)
   else if (state->wheels_state < 0.1)
     value *= (1 + state->wheels_state);
   value *= 0.8;
-  if (value < 0.2)
-    value = 0.2;
+  if (value < 0.1)
+    value = 0.1;
   return (value);
 }
