@@ -13,7 +13,7 @@
 
 int		cycle_wait(int max)
 {
-  write (1, "CYCLE_WAIT ", 11);
+  write(1, "CYCLE_WAIT ", 11);
   putnbr(max);
   write(1, "\n", 1);
   return (1);

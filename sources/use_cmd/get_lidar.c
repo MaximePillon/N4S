@@ -13,6 +13,6 @@
 
 int		get_lidar(void)
 {
-  write (1, "GET_INFO_LIDAR\n", 15);
+  write(1, "GET_INFO_LIDAR\n", 15);
   return (2);
 }

@@ -10,23 +10,53 @@
 
 #include	"../../includes/n4s.h"
 
-float		is_it_a_wall(t_status *state)
+static float	correct_angle(float value, t_status *state)
+{
+  value *= (1 - (state->lidar_state[16] / 3010));
+  if (state->lidar_state[0] < 250 && state->lidar_state[31] < 250)
+    value *= 2;
+  value = (value > 1) ? (1) : (value);
+  value = (value < -1) ? (-1) : (value);
+  return (value);
+}
+
+static float	get_data(t_status *state, int tiers)
 {
   int		cpt;
+  int		value;
+  float		data;
 
-  cpt = 14;
-  while (cpt < 18)
-    {
-      if (state->lidar_state[cpt] != state->lidar_state[cpt + 1]
-	  && state->lidar_state[cpt] < 2900
-	  && state->lidar_state[cpt + 1] < 2900)
-	if (state->lidar_state[14] < state->lidar_state[18])
-	  return (0.2);
-	else
-	  return (-0.2);
-      ++cpt;
-    }
-  return (0);
+  data = 0;
+  if (tiers == 1)
+    cpt = -1;
+  else if (tiers == 2)
+    cpt = 10;
+  else
+    cpt = 21;
+  value = cpt + 11;
+  while (++cpt < value)
+    data += state->lidar_state[cpt];
+  return (data);
+}
+
+static float	start_turn(t_status *state)
+{
+  float		value;
+  float		middle;
+  float		right;
+  float		left;
+
+  left = get_data(state, 1);
+  right = get_data(state, 3);
+  middle = get_data(state, 2);
+  if (middle >= right && middle >= left)
+    return (0);
+  if (left > right)
+    value = ((left / 10) / 3010);
+  else if (right >= left)
+    value = ((right / 10) / 3010) * -1;
+  value *= 0.2;
+  return (value);
 }
 
 float		angle_need(t_status *state)
@@ -35,13 +65,14 @@ float		angle_need(t_status *state)
   float		left;
   float		right;
 
-  right = ((state->lidar_state[31] + state->lidar_state[30] + state->lidar_state[29]) > (ANGLE_DIST * 3)) ?
-	  (ANGLE_DIST) : (state->lidar_state[31] + state->lidar_state[30] + state->lidar_state[29]) / 3;
-  left = ((state->lidar_state[0] + state->lidar_state[1] + state->lidar_state[2]) > (ANGLE_DIST * 3)) ?
-	 (ANGLE_DIST) : (state->lidar_state[0] + state->lidar_state[1] + state->lidar_state[2]) / 3;
-  if ((left < right + 10) && (left > right - 10))
-    return (is_it_a_wall(state));
-  else if (left < right)
+  if (state->lidar_state[0] > 600 && state->lidar_state[31] > 600)
+    return (start_turn(state));
+  right = state->lidar_state[31] + state->lidar_state[30] +
+	  state->lidar_state[29];
+  right = (right > (ANGLE_DIST * 3)) ? (ANGLE_DIST) : (right / 3);
+  left = state->lidar_state[0] + state->lidar_state[1] + state->lidar_state[2];
+  left = (left > (ANGLE_DIST * 3)) ? (ANGLE_DIST) : left / 3;
+  if (left < right)
   {
     (right + right - left > ANGLE_DIST) ?
     (right = ANGLE_DIST) : (right += right - left);
@@ -53,10 +84,5 @@ float		angle_need(t_status *state)
     (left = ANGLE_DIST) : (left += left - right);
     value = (1 - (ANGLE_MAX - (left - right)) / ANGLE_MAX);
   }
-  value *= (1 - (state->lidar_state[16] / 3010));
-  if (value > 1)
-    value = 1;
-  else if (value < -1)
-    value = -1;
-  return (value);
+  return (correct_angle(value, state));
 }

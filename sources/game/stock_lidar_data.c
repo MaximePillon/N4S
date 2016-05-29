@@ -10,9 +10,6 @@
 
 #include	"../../includes/define.h"
 
-
-#include	<unistd.h>
-
 int		stock_lidar_data(char **data, t_status *state)
 {
   int		cpt;

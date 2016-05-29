@@ -54,9 +54,9 @@ static void		move_to_word(char		*str,
 }
 
 static char		**my_make_tab(char		**tab,
-			      char		*str,
-			      int		nbr_words,
-			      char		*separator)
+					 char		*str,
+					 int		nbr_words,
+					 char		*separator)
 {
   int		cpt_tab;
   int		cpt_str;
@@ -80,7 +80,7 @@ static char		**my_make_tab(char		**tab,
 }
 
 static int		my_counter_words(char		*str,
-				 char		*separator)
+					   char		*separator)
 {
   int		cpt;
   int		nbr_words;
@@ -97,8 +97,8 @@ static int		my_counter_words(char		*str,
 }
 
 char		**my_str_to_wordtab(char	*str,
-				    int		*nbr_words,
-				    char	*separator)
+					int	*nbr_words,
+					char	*separator)
 {
   char		**tab;
 

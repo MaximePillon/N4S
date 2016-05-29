@@ -128,7 +128,7 @@
 # endif                 /* !SIMU_UP&RUNNING */
 
 # ifndef		ANGLE_DIST
-#  define		ANGLE_DIST			(800)
+#  define		ANGLE_DIST			(600)
 # endif			/* !ANGLE_DIST */
 
 # ifndef		ANGLE_MAX

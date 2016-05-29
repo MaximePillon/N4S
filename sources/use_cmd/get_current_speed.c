@@ -13,6 +13,6 @@
 
 int		get_current_speed(void)
 {
-  write (1, "GET_CURRENT_SPEED\n", 18);
+  write(1, "GET_CURRENT_SPEED\n", 18);
   return (3);
 }
