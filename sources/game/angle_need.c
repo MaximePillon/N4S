@@ -5,18 +5,10 @@
 ** Login   <sylvain.corsini@epitech.eu>
 **
 ** Started on  Thu May 26 11:17:29 2016 Sylvain CORSINI
-** Last update Thu May 26 11:17:29 2016 Sylvain CORSINI
+** Last update Sun May 29 16:07:16 2016 Maxence
 */
 
-
-#include	<stdio.h>
-
-
-
 #include	"../../includes/n4s.h"
-
-#define		ANGLE_DIST	(800)
-#define		ANGLE_MAX	(2 * ANGLE_DIST)
 
 float		angle_need(t_status *state)
 {

@@ -5,7 +5,7 @@
 ** Login   <maxime.pillon@epitech.eu>
 **
 ** Started on  Mon Apr 25 09:06:31 2016 Maxime Pillon
-** Last update Mon Apr 25 09:06:31 2016 Maxime Pillon
+** Last update Sun May 29 16:06:54 2016 Maxence
 */
 
 #ifndef CPE_2015_N4S_N4S_H
@@ -126,6 +126,14 @@
 # ifndef                SIMU_UP_RUNNING
 #  define               SIMU_UP_RUNNING			(19)
 # endif                 /* !SIMU_UP&RUNNING */
+
+# ifndef		ANGLE_DIST
+#  define		ANGLE_DIST			(800)
+# endif			/* !ANGLE_DIST */
+
+# ifndef		ANGLE_MAX
+#  define		ANGLE_MAX			(2 * ANGLE_DIST)
+# endif			/* !ANGLE_MAX */
 
 typedef struct s_status
 {
