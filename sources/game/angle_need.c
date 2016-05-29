@@ -65,7 +65,7 @@ float		angle_need(t_status *state)
   float		left;
   float		right;
 
-  if (state->lidar_state[0] > 600 && state->lidar_state[31] > 600)
+  if (state->lidar_state[0] > 1100 && state->lidar_state[31] > 1100)
     return (start_turn(state));
   right = state->lidar_state[31] + state->lidar_state[30] +
 	  state->lidar_state[29];
