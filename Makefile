@@ -5,7 +5,7 @@
 ## Login   <maxime.pillon@epitech.eu>
 ##
 ## Started on  Mon Apr 25 07:46:27 2016 Maxime Pillon
-## Last update Tue May 24 15:42:35 2016 Pillon maxime
+## Last update Sun May 29 23:10:43 2016 Maxence
 ##
 
 CC		=	gcc
@@ -15,7 +15,6 @@ RM		=	rm -f
 CFLAGS		+=	-W -Wextra -Wall
 CFLAGS		+=	-Werror
 CFLAGS		+=	-Iincludes
-CFLAGS		+=	-g -ggdb3
 
 NAME		=	ia
 
